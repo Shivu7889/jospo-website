@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollToTop from "@/components/ScrollToTop";
 import PublicShell from "@/components/PublicShell";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -109,6 +110,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <WhatsAppButton />
             <ScrollToTop />
           </PublicShell>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
