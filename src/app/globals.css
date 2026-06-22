@@ -1,26 +1,387 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #0A4DA2;
+  --color-primary-dark: #083A7A;
+  --color-primary-light: #1565C0;
+  --color-secondary: #00B4D8;
+  --color-secondary-dark: #0096B7;
+  --color-secondary-light: #48CAE4;
+  --color-accent: #48CAE4;
+  --color-dark: #0D1B2A;
+  --color-dark-light: #1B2838;
+  --color-dark-surface: #1E3044;
+  --color-light: #F0F8FF;
+  --color-light-gray: #E8F0FE;
+  --color-ice: #CAF0F8;
+  --color-navy: #023E8A;
+  --color-slate: #334155;
+  --color-muted: #64748B;
+  --color-success: #10B981;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #128C7E;
+
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ─────────────── BASE ─────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+  }
 
-@media (prefers-color-scheme: dark) {
+  body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  /* Light mode defaults */
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-primary: #ffffff;
+    --bg-secondary: #F0F8FF;
+    --bg-card: #ffffff;
+    --bg-card-hover: #F8FAFC;
+    --text-primary: #0D1B2A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --border-color: #E8F0FE;
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-shadow: rgba(10, 77, 162, 0.08);
+    --overlay: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Dark mode */
+  .dark {
+    --bg-primary: #0B1120;
+    --bg-secondary: #111827;
+    --bg-card: #1A2332;
+    --bg-card-hover: #1E293B;
+    --text-primary: #F1F5F9;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(15, 23, 42, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --glass-shadow: rgba(0, 0, 0, 0.3);
+    --overlay: rgba(0, 0, 0, 0.7);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  ::selection {
+    background-color: var(--color-secondary);
+    color: white;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-primary-dark); }
+}
+
+/* ─────────────── COMPONENTS ─────────────── */
+@layer components {
+  .section-container {
+    @apply mx-auto max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-24 lg:py-32;
+  }
+
+  .section-title {
+    font-family: var(--font-heading);
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold text-center tracking-tight;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .section-subtitle {
+    @apply text-lg sm:text-xl text-center mt-5 max-w-3xl mx-auto leading-relaxed;
+    color: var(--text-muted);
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 text-sm font-semibold tracking-widest uppercase mb-4;
+    color: var(--color-secondary);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+  }
+
+  .gradient-text-light {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--color-secondary-light) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+  }
+
+  /* ── Glass Cards ── */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow);
+  }
+
+  .glass-card-dark {
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-card-premium {
+    background: var(--glass-bg);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-border);
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      0 8px 40px var(--glass-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  /* ── Premium Cards ── */
+  .premium-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 1.25rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .premium-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(10, 77, 162, 0.15);
+    border-color: var(--color-secondary);
+  }
+
+  .dark .premium-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 180, 216, 0.15);
+  }
+
+  /* ── 3D Card ── */
+  .card-3d {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .card-3d-inner {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+  }
+
+  /* ── Gradient Border ── */
+  .gradient-border-wrap {
+    position: relative;
+    border-radius: 1.25rem;
+    padding: 1px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+  }
+
+  .gradient-border-wrap > * {
+    border-radius: calc(1.25rem - 1px);
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-2xl font-semibold text-white transition-all duration-300 px-7 py-3.5 text-sm sm:text-base;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    box-shadow: 0 4px 20px rgba(10, 77, 162, 0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(10, 77, 162, 0.4);
+  }
+  .btn-primary:active { transform: translateY(0) scale(0.98); }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-2xl font-semibold transition-all duration-300 px-7 py-3.5 text-sm sm:text-base;
+    color: var(--text-primary);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+  }
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-secondary);
+    box-shadow: 0 8px 30px var(--glass-shadow);
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-2xl font-semibold text-white transition-all duration-300 px-7 py-3.5 text-sm sm:text-base;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  }
+  .btn-whatsapp:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+  }
+  .btn-whatsapp:active { transform: translateY(0) scale(0.98); }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-2xl font-semibold transition-all duration-300 px-7 py-3.5 text-sm sm:text-base;
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+  }
+  .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  /* ── Nav link hover ── */
+  .nav-link {
+    @apply relative px-3 py-2 text-sm font-medium transition-colors duration-200;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 w-0 h-0.5 rounded-full transition-all duration-300;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    transform: translateX(-50%);
+  }
+  .nav-link:hover::after {
+    @apply w-2/3;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─────────────── ANIMATIONS ─────────────── */
+
+@keyframes whatsapp-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.whatsapp-pulse { animation: whatsapp-pulse 2s infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+  50% { transform: translateY(-25px) rotate(180deg); opacity: 0.8; }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+.animate-float-slow { animation: float-slow 4s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.1) 50%, transparent 75%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 180, 216, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(0, 180, 216, 0.4); }
+}
+.animate-glow { animation: glow 3s ease-in-out infinite; }
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes countdown-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.animate-countdown-pulse { animation: countdown-pulse 2s ease-in-out infinite; }
+
+/* ── Background patterns ── */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(10, 77, 162, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 77, 162, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.dark .bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(0, 180, 216, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 180, 216, 0.04) 1px, transparent 1px);
+}
+
+.bg-dots-pattern {
+  background-image: radial-gradient(circle, rgba(10, 77, 162, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.dark .bg-dots-pattern {
+  background-image: radial-gradient(circle, rgba(0, 180, 216, 0.06) 1px, transparent 1px);
+}
+
+/* ── Range slider styling ── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 180, 216, 0.4);
+  border: 3px solid white;
+  transition: transform 0.2s;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* ── Modal backdrop ── */
+.modal-backdrop {
+  background: var(--overlay);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ── Comparison bar ── */
+.compare-bar {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: 4px;
+  height: 8px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Theme transition ── */
+* {
+  transition-property: background-color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+/* Exclude elements that have their own transitions */
+a, button, input, textarea, [class*="btn-"], [class*="card"], [class*="nav"] {
+  transition-property: all;
 }

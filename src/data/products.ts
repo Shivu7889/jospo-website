@@ -1,0 +1,172 @@
+export type ProductCategory = "personal" | "medium" | "large" | "industrial";
+
+export interface Product {
+  id: string;
+  name: string;
+  slug: string;
+  category: ProductCategory;
+  image: string;
+  fanSize: string;
+  airFlow: string;
+  tankCapacity: string;
+  powerConsumption: string;
+  coolingArea: string;
+  coolingAreaSqM: number;
+  dimensions: string;
+  badge?: string;
+}
+
+export const categoryLabels: Record<ProductCategory, string> = {
+  personal: "Personal",
+  medium: "Medium",
+  large: "Large",
+  industrial: "Industrial",
+};
+
+export const products: Product[] = [
+  {
+    id: "rolex-35l",
+    name: "JOSPO Rolex 35L",
+    slug: "rolex-35l",
+    category: "personal",
+    image: "/images/products/rolex-35l.jpg",
+    fanSize: "12 Inch",
+    airFlow: "2,400 m³/h",
+    tankCapacity: "35 Litres",
+    powerConsumption: "114 Watts",
+    coolingArea: "40 sq. m",
+    coolingAreaSqM: 40,
+    dimensions: "460 × 435 × 860 mm",
+    badge: "Compact",
+  },
+  {
+    id: "rolex-65l",
+    name: "JOSPO Rolex 65L",
+    slug: "rolex-65l",
+    category: "medium",
+    image: "/images/products/rolex-65l.jpg",
+    fanSize: "12 Inch",
+    airFlow: "2,400 m³/h",
+    tankCapacity: "65 Litres",
+    powerConsumption: "114 Watts",
+    coolingArea: "55 sq. m",
+    coolingAreaSqM: 55,
+    dimensions: "460 × 435 × 1080 mm",
+  },
+  {
+    id: "amaze-90l",
+    name: "JOSPO Amaze 90L",
+    slug: "amaze-90l",
+    category: "medium",
+    image: "/images/products/amaze-90l.jpg",
+    fanSize: "16 Inch",
+    airFlow: "3,500 m³/h",
+    tankCapacity: "90 Litres",
+    powerConsumption: "160 Watts",
+    coolingArea: "58 sq. m",
+    coolingAreaSqM: 58,
+    dimensions: "620 × 440 × 1270 mm",
+    badge: "Popular",
+  },
+  {
+    id: "signature-100l",
+    name: "JOSPO Signature 100L",
+    slug: "signature-100l",
+    category: "large",
+    image: "/images/products/signature-100l.png",
+    fanSize: "18 Inch",
+    airFlow: "4,800 m³/h",
+    tankCapacity: "100 Litres",
+    powerConsumption: "160 Watts",
+    coolingArea: "80 sq. m",
+    coolingAreaSqM: 80,
+    dimensions: "625 × 430 × 1270 mm",
+    badge: "Best Seller",
+  },
+  {
+    id: "turbo-gt-110l",
+    name: "JOSPO Turbo GT 110L",
+    slug: "turbo-gt-110l",
+    category: "large",
+    image: "/images/products/turbo-gt-110l.jpg",
+    fanSize: "17 Inch",
+    airFlow: "4,200 m³/h",
+    tankCapacity: "110 Litres",
+    powerConsumption: "160 Watts",
+    coolingArea: "70 sq. m",
+    coolingAreaSqM: 70,
+    dimensions: "620 × 475 × 1360 mm",
+  },
+  {
+    id: "fusion-110l",
+    name: "JOSPO Fusion 110L",
+    slug: "fusion-110l",
+    category: "large",
+    image: "/images/products/fusion-110l.jpg",
+    fanSize: "17 Inch",
+    airFlow: "4,200 m³/h",
+    tankCapacity: "110 Litres",
+    powerConsumption: "160 Watts",
+    coolingArea: "70 sq. m",
+    coolingAreaSqM: 70,
+    dimensions: "620 × 475 × 1360 mm",
+  },
+  {
+    id: "defender-135l",
+    name: "JOSPO Defender 135L",
+    slug: "defender-135l",
+    category: "industrial",
+    image: "/images/products/defender-135l.jpg",
+    fanSize: "20 Inch",
+    airFlow: "7,900 m³/h",
+    tankCapacity: "135 Litres",
+    powerConsumption: "250 Watts",
+    coolingArea: "131 sq. m",
+    coolingAreaSqM: 131,
+    dimensions: "800 × 560 × 1415 mm",
+    badge: "Heavy Duty",
+  },
+  {
+    id: "storm-130l",
+    name: "JOSPO Storm 130L",
+    slug: "storm-130l",
+    category: "industrial",
+    image: "/images/products/storm-130l.jpg",
+    fanSize: "20 Inch",
+    airFlow: "8,000 m³/h",
+    tankCapacity: "130 Litres",
+    powerConsumption: "250 Watts",
+    coolingArea: "133 sq. m",
+    coolingAreaSqM: 133,
+    dimensions: "800 × 550 × 1415 mm",
+  },
+  {
+    id: "rolex-135l",
+    name: "JOSPO Rolex 135L",
+    slug: "rolex-135l",
+    category: "industrial",
+    image: "/images/products/rolex-135l.jpg",
+    fanSize: "20 Inch",
+    airFlow: "7,500 m³/h",
+    tankCapacity: "135 Litres",
+    powerConsumption: "250 Watts",
+    coolingArea: "125 sq. m",
+    coolingAreaSqM: 125,
+    dimensions: "800 × 535 × 1415 mm",
+  },
+  {
+    id: "tent-plus-200l",
+    name: "JOSPO Tent Plus 200L",
+    slug: "tent-plus-200l",
+    category: "industrial",
+    image: "/images/products/tent-plus-200l.jpg",
+    fanSize: "26 Inch",
+    airFlow: "16,000 m³/h",
+    tankCapacity: "200 Litres",
+    powerConsumption: "450 Watts",
+    coolingArea: "266 sq. m",
+    coolingAreaSqM: 266,
+    dimensions: "1090 × 575 × 1595 mm",
+    badge: "Max Power",
+  },
+];
