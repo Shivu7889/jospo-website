@@ -5,32 +5,32 @@ import PageSeo from "@/models/PageSeo";
 // Default SEO values as fallback when database is unreachable
 const defaultSeo: Record<string, { metaTitle: string; metaDescription: string }> = {
   home: {
-    metaTitle: "JOSPO Cooling Solutions Pvt. Ltd. | India's Trusted Air Cooler Manufacturer",
-    metaDescription: "JOSPO is a leading manufacturer of high-performance desert, commercial & industrial air coolers in Bhiwadi, Rajasthan.",
+    metaTitle: "JOSPO Cooler | Best Cooler Manufacturing Company in India",
+    metaDescription: "JOSPO (jospocooler) is India's leading air cooler manufacturing company specializing in high-performance residential, commercial, and industrial coolers.",
   },
   about: {
-    metaTitle: "About Us | JOSPO Cooling Solutions",
-    metaDescription: "Learn about JOSPO Cooling Solutions — India's trusted manufacturer of high-performance air coolers.",
+    metaTitle: "About JOSPO | India's Premier Cooler Manufacturing Company",
+    metaDescription: "Discover JOSPO, India's trusted cooler manufacturing company. Delivering energy-efficient and high-performance jospocooler models across India.",
   },
   faq: {
-    metaTitle: "FAQ | JOSPO Cooling Solutions",
-    metaDescription: "Frequently asked questions about JOSPO air coolers.",
+    metaTitle: "FAQ | JOSPO Cooler & Cooling Solutions",
+    metaDescription: "Frequently asked questions about JOSPO air coolers, jospocooler models, electricity consumption, and dealer services.",
   },
   "cooling-finder": {
-    metaTitle: "Cooling Finder | JOSPO Cooling Solutions",
-    metaDescription: "Find the perfect air cooler for your space with JOSPO's smart recommendation tool.",
+    metaTitle: "Cooling Finder | Find Your Perfect JOSPO Cooler",
+    metaDescription: "Not sure which cooler is best? Try JOSPO's cooling finder tool to choose the perfect air cooler for your space.",
   },
   manufacturing: {
-    metaTitle: "Manufacturing | JOSPO Cooling Solutions",
-    metaDescription: "Explore JOSPO's state-of-the-art manufacturing facility in Bhiwadi, Rajasthan.",
+    metaTitle: "Cooler Manufacturing Facility | JOSPO Cooling Solutions",
+    metaDescription: "Step inside JOSPO's state-of-the-art air cooler manufacturing plant in Bhiwadi, Rajasthan. See how our heavy-duty coolers are built.",
   },
   "why-choose": {
-    metaTitle: "Why Choose JOSPO | JOSPO Cooling Solutions",
-    metaDescription: "Discover why JOSPO is India's trusted air cooler manufacturer.",
+    metaTitle: "Why Choose JOSPO | Best Air Cooler Manufacturer",
+    metaDescription: "Find out why JOSPO is ranked as India's best air cooler manufacturer with premium components, warranty support, and dealer networks.",
   },
   blog: {
-    metaTitle: "Blog | JOSPO Cooling Solutions",
-    metaDescription: "Read the latest articles about cooling tips, product guides, and industry news.",
+    metaTitle: "Cooler Guides & Industry Blog | JOSPO Cooler",
+    metaDescription: "Get the latest air cooler guides, cooling tips, maintenance advice, and news from JOSPO, your trusted cooler manufacturer.",
   },
 };
 
