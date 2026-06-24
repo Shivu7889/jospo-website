@@ -40,7 +40,7 @@ export default function Testimonials() {
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-sm">{t.name.charAt(0)}</div>
                   <div className="text-left">
                     <div className="font-semibold text-sm font-[family-name:var(--font-heading)]" style={{ color: 'var(--text-primary)' }}>{t.name}</div>
-                    <div className="text-xs" style={{ color: 'var(--text-muted)' }}>{t.role}, {t.location}</div>
+                    <div className="text-xs" style={{ color: 'var(--text-muted)' }}>{t.location}</div>
                   </div>
                 </div>
               </motion.div>
