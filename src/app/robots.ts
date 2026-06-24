@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/admin/",
     },
-    sitemap: "https://jospo.in/sitemap.xml",
+    sitemap: "https://jospocooler.com/sitemap.xml",
   };
 }

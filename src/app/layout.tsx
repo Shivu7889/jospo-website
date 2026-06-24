@@ -22,7 +22,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jospo.in"),
+  metadataBase: new URL("https://jospocooler.com"),
   title: "JOSPO Cooler | Best Air Cooler Manufacturing Company in India",
   description:
     "JOSPO (jospocooler) is India's leading air cooler manufacturing company specializing in high-performance residential, commercial, and industrial coolers. Buy premium, energy-efficient JOSPO coolers today.",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   publisher: "JOSPO Cooling Solutions Pvt. Ltd.",
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: {
-    type: "website", locale: "en_IN", url: "https://jospo.in", siteName: "JOSPO Cooling Solutions",
+    type: "website", locale: "en_IN", url: "https://jospocooler.com", siteName: "JOSPO Cooling Solutions",
     title: "JOSPO Cooler | Best Air Cooler Manufacturing Company in India",
     description: "JOSPO (jospocooler) is India's leading air cooler manufacturing company specializing in high-performance residential, commercial, and industrial coolers.",
     images: [{ url: "/images/hero-slide-1.jpg", width: 1200, height: 630, alt: "JOSPO Cooling Solutions" }],
@@ -60,14 +60,14 @@ export const metadata: Metadata = {
     description: "JOSPO (jospocooler) is India's leading air cooler manufacturing company specializing in high-performance residential, commercial, and industrial coolers.",
     images: ["/images/hero-slide-1.jpg"],
   },
-  alternates: { canonical: "https://jospo.in" },
+  alternates: { canonical: "https://jospocooler.com" },
 };
 
 const localBusinessSchema = {
-  "@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://jospo.in",
+  "@context": "https://schema.org", "@type": "LocalBusiness", "@id": "https://jospocooler.com",
   name: "JOSPO Cooling Solutions Pvt. Ltd.",
   description: "Leading air cooler manufacturing company of high-quality air coolers (jospocooler) for residential, commercial, and industrial cooling applications.",
-  url: "https://jospo.in", telephone: "+919602243363", email: "jospoindia@gmail.com",
+  url: "https://jospocooler.com", telephone: "+919602243363", email: "jospoindia@gmail.com",
   address: { "@type": "PostalAddress", streetAddress: "F-37E, RIICO Industrial Area, Near Banjara Chowk", addressLocality: "Khuskhera, Bhiwadi", addressRegion: "Rajasthan", postalCode: "301707", addressCountry: "IN" },
   geo: { "@type": "GeoCoordinates", latitude: 28.16, longitude: 76.89 },
   openingHours: "Mo-Sa 09:00-18:00", priceRange: "$$",
@@ -76,7 +76,7 @@ const localBusinessSchema = {
 
 const organizationSchema = {
   "@context": "https://schema.org", "@type": "Organization",
-  name: "JOSPO Cooling Solutions Pvt. Ltd.", url: "https://jospo.in", logo: "/images/hero-slide-1.jpg",
+  name: "JOSPO Cooling Solutions Pvt. Ltd.", url: "https://jospocooler.com", logo: "/images/hero-slide-1.jpg",
   contactPoint: { "@type": "ContactPoint", telephone: "+919602243363", contactType: "sales", areaServed: "IN", availableLanguage: ["English", "Hindi"] },
   sameAs: ["https://www.instagram.com/jospo.pvt"],
 };

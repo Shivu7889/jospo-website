@@ -181,7 +181,7 @@ export default function AdminSeoPage() {
                     <input
                       type="url"
                       value={editForm.canonicalUrl}
-                      placeholder="https://jospo.in/..."
+                      placeholder="https://jospocooler.com/..."
                       onChange={(e) =>
                         setEditForm((p) => ({ ...p, canonicalUrl: e.target.value }))
                       }
