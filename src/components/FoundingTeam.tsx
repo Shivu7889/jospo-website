@@ -59,7 +59,7 @@ export default function FoundingTeam() {
         </motion.div>
 
         {/* Team Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-24 max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto">
           {team.map((member, i) => (
             <motion.div
               key={member.name}
