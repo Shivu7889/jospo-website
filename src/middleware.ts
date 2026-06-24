@@ -11,9 +11,22 @@ export async function middleware(request: NextRequest) {
 
   // Protect all /admin routes
   if (pathname.startsWith("/admin")) {
+    const isSecure = request.nextUrl.protocol === "https:";
+    
+    // NextAuth v5 / Auth.js uses authjs.session-token while v4 uses next-auth.session-token
+    const cookieName = request.cookies.has("__Secure-authjs.session-token")
+      ? "__Secure-authjs.session-token"
+      : request.cookies.has("authjs.session-token")
+      ? "authjs.session-token"
+      : request.cookies.has("__Secure-next-auth.session-token")
+      ? "__Secure-next-auth.session-token"
+      : "next-auth.session-token";
+
     const token = await getToken({
       req: request,
       secret: process.env.NEXTAUTH_SECRET,
+      cookieName,
+      secureCookie: isSecure,
     });
 
     if (!token) {
