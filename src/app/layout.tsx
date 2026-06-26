@@ -61,6 +61,15 @@ export const metadata: Metadata = {
     images: ["/images/hero-slide-1.jpg"],
   },
   alternates: { canonical: "https://jospocooler.com" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+  },
 };
 
 const localBusinessSchema = {
@@ -94,7 +103,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.png" type="image/png" sizes="512x512" />
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="apple-touch-icon" href="/icon.png" />
         <meta name="theme-color" content="#0A4DA2" />
         <script
           dangerouslySetInnerHTML={{
